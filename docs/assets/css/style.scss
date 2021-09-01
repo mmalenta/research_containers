@@ -1,0 +1,38 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+  background-color: #272727;
+  color: #ebe9e9;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  color: rgb(58, 142, 181);
+}
+
+a {
+  color:rgb(58, 142, 181)
+}
+
+
+strong {
+  color: #ebe9e9;
+  font-weight: 800;
+}
+
+p {
+  text-align: justify;
+}
+
+th {
+  color: #ebe9e9;
+  border-bottom: 2px solid #ebe9e9;
+}
+
+td > a {
+  color: rgb(58, 142, 181);
+  font-weight: 700;
+
+}
