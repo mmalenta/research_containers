@@ -20,15 +20,8 @@ layout: default
       <th>Resources</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td><a href="technologies/docker.html">Docker</a></td>
-      <td><ul><li>foo</li><li>bar</li></ul></td>
-    </tr>
-    <tr>
-      <td><a href="technologies/singularity.html">Singularity</a></td>
-      <td><ul><li>foo</li><li>baz</li></ul></td>
-    </tr>
+  <tbody id="technologies">
+    
   </tbody>
 </table>
 
@@ -42,3 +35,21 @@ be of use to the research community and you are willing to share.
 ## Join us!
 
 # Contributors
+
+<script>
+
+  // This solution is taken from TimE's answer to
+  // https://stackoverflow.com/questions/39048654/how-to-enable-directory-indexing-on-github-pages
+
+  (async () => {
+    const response = await fetch("https://api.github.com/repos/mmalenta/research_containers/contents/docs/technologies");
+    const data = await response.json();
+    let htmlString = "";
+    for (let file of data) {
+      htmlString += "<tr><td>"
+      htmlString +=`<a href="${file.path.replace("docs/", "").replace(".md", ".html")}">${file.name.replace(".md", "")}</a></li>`;
+      htmlString += "</td><td></td></tr>";
+    }
+    document.getElementById("technologies").innerHTML = htmlString;
+  })()
+</script>
