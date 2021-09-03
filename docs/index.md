@@ -10,9 +10,6 @@ layout: default
 # Motivation
 
 # Available resources
-
-<!-- Markdown can get messy with list in a table
-  Go with a raw HTML -->
 <table>
   <thead>
     <tr>
@@ -20,8 +17,14 @@ layout: default
       <th>Resources</th>
     </tr>
   </thead>
-  <tbody id="technologies">
-    
+  <tbody>
+{% for file in site.pages %}
+  {% if file.dir == "/technologies/" %}
+    <tr><td><a href="{{ file.path | replace: '.md', '.html' }}">{{ file.name | replace: ".md", "" | capitalize }}</a></td>
+    <td></td></tr>
+  
+  {% endif %}
+{% endfor %}
   </tbody>
 </table>
 
@@ -35,21 +38,3 @@ be of use to the research community and you are willing to share.
 ## Join us!
 
 # Contributors
-
-<script>
-
-  // This solution is taken from TimE's answer to
-  // https://stackoverflow.com/questions/39048654/how-to-enable-directory-indexing-on-github-pages
-
-  (async () => {
-    const response = await fetch("https://api.github.com/repos/mmalenta/research_containers/contents/docs/technologies");
-    const data = await response.json();
-    let htmlString = "";
-    for (let file of data) {
-      htmlString += "<tr><td>"
-      htmlString +=`<a href="${file.path.replace("docs/", "").replace(".md", ".html")}">${file.name.replace(".md", "")}</a></li>`;
-      htmlString += "</td><td></td></tr>";
-    }
-    document.getElementById("technologies").innerHTML = htmlString;
-  })()
-</script>
