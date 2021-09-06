@@ -25,7 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   containers in research environment.
 domain: mmalenta.github.io
 baseurl: "/research_containers" # the subpath of your site, e.g. /blog
-url: "https://mmalenta.github.io/research_containers/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mmalenta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: fastradiopotato
 github_username:  mmalenta
 
