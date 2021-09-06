@@ -58,9 +58,6 @@ layout: default
   </tbody>
 </table>
 
-
-
-
 # Contact
 No single containerisation technology can solve all the problems.
 As the number of problems is growing, the number of available solutions
