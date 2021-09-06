@@ -1,7 +1,5 @@
 ---
 layout : technology
-title: "Singularity"
+name: "Singularity"
 permalink: /technologies/singularity
 ---
-
-# Singularity

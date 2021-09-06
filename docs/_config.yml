@@ -29,6 +29,11 @@ url: "https://mmalenta.github.io" # the base hostname & protocol for your site, 
 twitter_username: fastradiopotato
 github_username:  mmalenta
 
+collections:
+  technologies:
+    output: true
+  resources:
+    output: true
 # Build settings
 theme: jekyll-theme-minimal
 #remote_theme: pages-themes/minimal@v0.2.0

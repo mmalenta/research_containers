@@ -1,7 +1,5 @@
 ---
 layout : technology
-title: "Docker"
+name: "Docker"
 permalink: /technologies/docker
 ---
-
-# Docker

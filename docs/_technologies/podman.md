@@ -1,7 +1,5 @@
 ---
 layout : technology
-title: "Podman"
+name: "Podman"
 permalink: /technologies/podman
 ---
-
-# Podman

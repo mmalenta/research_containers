@@ -18,15 +18,48 @@ layout: default
     </tr>
   </thead>
   <tbody>
-{% for file in site.pages %}
-  {% if file.dir == "/technologies/" %}
-    <tr><td><a href="{{ file.path | replace: '.md', '.html' }}">{{ file.name | replace: ".md", "" | capitalize }}</a></td>
-    <td></td></tr>
+  {% for tech in site.technologies %}
+    <tr><td><a href="{{ tech.url | absolute_url}}">{{ tech.name }}</a></td>
+    <td>
+    
+    {% assign resource_files = site.collections | where: "label", "resources" | first %}
+
+    {% assign all_files=resource_files.docs | concat: resource_files.files%}
+
+    {% assign resources = "" %}
+    {% for file in all_files %}
+
+      {% assign split_file=file.path | split: "/" %}
+      {% assign down_name = tech.name | downcase %}
+      {% assign split_size = split_file | size %}
+      {% if split_file[1] == down_name and split_size > 3 %}
+
+        {% assign resources = resources | append: " " | append: split_file[2] %}
+
+      {% endif %}
+
+    {% endfor %}
+
+        {% assign resources = resources | split: " " | uniq %}
+        {% assign resources_size = resources | size %}
+
+        {% if resources_size > 0 %}
+          <ul>
+          {% for resource in resources %}
+            <li><a href="resources/{{down_name}}/{{down_name}}_resources.html">{{ resource | capitalize }}</a></li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+        
+
+        </td></tr>
   
-  {% endif %}
-{% endfor %}
+  {% endfor %}
   </tbody>
 </table>
+
+
+
 
 # Contact
 No single containerisation technology can solve all the problems.
