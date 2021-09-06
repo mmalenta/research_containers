@@ -23,8 +23,8 @@ email: mateusz.malenta@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is a collection of learning resources on the subject of using
   containers in research environment.
-domain: mmalenta.github.io/research_containers/
-baseurl: "/" # the subpath of your site, e.g. /blog
+domain: mmalenta.github.io
+baseurl: "/research_containers" # the subpath of your site, e.g. /blog
 url: "https://mmalenta.github.io/research_containers/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: fastradiopotato
 github_username:  mmalenta
