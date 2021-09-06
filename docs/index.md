@@ -46,7 +46,7 @@ layout: default
         {% if resources_size > 0 %}
           <ul>
           {% for resource in resources %}
-            <li><a href="resources/{{down_name}}/{{down_name}}_resources.html">{{ resource | capitalize }}</a></li>
+            <li><a href="resources/{{down_name}}/{{down_name}}_resources.html#{{resource}}">{{ resource | capitalize }}</a></li>
           {% endfor %}
           </ul>
         {% endif %}

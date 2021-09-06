@@ -40,3 +40,16 @@ td > a, li > a {
 section.technology {
   width: 100%;
 }
+
+pre.snippet {
+  padding: 0;
+}
+
+pre code {
+  color: #ebe9e9;
+  font-size: 12px;
+  background-color: #535353;
+  padding: 10px;
+  margin: 0;
+  display: block;
+}
