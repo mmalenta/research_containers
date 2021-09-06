@@ -1,5 +1,5 @@
 ---
-layout : default
+layout : technology
 title: "Podman"
 permalink: /technologies/podman
 ---
