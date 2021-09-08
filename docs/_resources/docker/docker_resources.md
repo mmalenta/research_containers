@@ -7,14 +7,43 @@ permalink: /resources/docker/docker_resources
 
 # Docker resources
 
+{% assign resource_files = site.collections | where: "label", "resources" | first %}
+
 <h2 id="lessons">Lessons</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Lesson #</th>
+        <th>Lesson title</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in resource_files.docs %}
+
+        {% assign split_file=file.path | split: "/" %}
+        {% if split_file[1] == page.name and split_file[2] == "lessons" %}
+
+          <tr>
+            <td>{{file.lesson_number}}</td>
+            <td><a href="{{file.url | absolute_url}}">{{file.lesson_title}}</a></td>
+            <td>{{file.lesson_duration}}</td>
+          </tr>
+
+        {% endif %}
+
+      {% endfor %}
+    
+    </tbody>
+</table>
+
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc. Interdum posuere lorem ipsum dolor sit amet. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Bibendum arcu vitae elementum curabitur vitae nunc. Lectus nulla at volutpat diam ut venenatis. Tincidunt augue interdum velit euismod in pellentesque. Et tortor at risus viverra adipiscing at. Lacus sed turpis tincidunt id.
 
 Blandit massa enim nec dui nunc. Risus in hendrerit gravida rutrum quisque. Aliquet bibendum enim facilisis gravida. Sed viverra ipsum nunc aliquet. Lectus nulla at volutpat diam. Convallis posuere morbi leo urna. Pellentesque pulvinar pellentesque habitant morbi tristique. Ut lectus arcu bibendum at varius vel pharetra. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Eget duis at tellus at urna condimentum mattis pellentesque. Iaculis eu non diam phasellus vestibulum lorem sed. Tincidunt id aliquet risus feugiat in ante metus dictum at. Elementum eu facilisis sed odio morbi. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit.
 
 <h2 id="dockerfiles">Dockerfiles</h2>
 
-{% assign resource_files = site.collections | where: "label", "resources" | first %}
 {% for file in resource_files.files %}
 
   {% assign split_file=file.path | split: "/" %}
