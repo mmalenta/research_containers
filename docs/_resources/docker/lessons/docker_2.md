@@ -1,7 +1,8 @@
 ---
-layout : default
-title: "Docker 2"
-permalink: /resources/docker/lessons/docker_2
+layout : lesson
+technology: "Docker"
+lesson_number: "2.0"
+lesson_title: "Basic Docker"
+lesson_duration: "0h45m"
+permalink: /resources/docker/lessons/docker_20
 ---
-
-# Docker 2

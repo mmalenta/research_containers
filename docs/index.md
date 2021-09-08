@@ -51,7 +51,6 @@ layout: default
           </ul>
         {% endif %}
         
-
         </td></tr>
   
   {% endfor %}
