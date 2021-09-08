@@ -18,15 +18,25 @@
 
       <h4><a href="{{ "/" | absolute_url }}">Go back to the main page</a></h4>
       {% assign lower_tech = page.technology | downcase %}
-      <h4><a href="{{ '/resources/' | append: lower_tech | append: '/' | append: lower_tech | append: '_resources.html#lessons' | absolute_url }}">Go back to the lessons list</a>
+      {% if page.lesson_section %}
+        <h4><a href="{{ '/resources/' | append: lower_tech | append: '/lessons/' | append: lower_tech | append: '_10.html' | absolute_url }}">Go back to the main section</a></h4>  
+      {% else %}
+        <h4><a href="{{ '/resources/' | append: lower_tech | append: '/' | append: lower_tech | append: '_resources.html#lessons' | absolute_url }}">Go back to the lessons list</a>
+      {% endif %}
 
       <h1>{{page.technology}} {{page.lesson_number}}: {{page.lesson_title}}</h1>
       
-      {{ content }}
+      {{ page.content }}
 
+      </br>
+      </br>
       <h4><a href="{{ "/" | absolute_url }}">Go back to the main page</a></h4>
-      <h4><a href="{{ '/resources/' | append: lower_tech | append: '/' | append: lower_tech | append: '_resources.html#lessons' | absolute_url }}">Go back to the lessons list</a>
-
+      {% if page.lesson_section %}
+        <h4><a href="{{ '/resources/' | append: lower_tech | append: '/lessons/' | append: lower_tech | append: '_10.html' | absolute_url }}">Go back to the main section</a></h4>  
+      {% else %}
+        {% assign lower_tech = page.technology | downcase %}
+        <h4><a href="{{ '/resources/' | append: lower_tech | append: '/' | append: lower_tech | append: '_resources.html#lessons' | absolute_url }}">Go back to the lessons list</a>
+      {% endif %}
       </section>
       <footer>
         {% if site.github.is_project_page %}
