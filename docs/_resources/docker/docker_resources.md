@@ -20,6 +20,7 @@ Blandit massa enim nec dui nunc. Risus in hendrerit gravida rutrum quisque. Aliq
   {% assign split_file=file.path | split: "/" %}
   {% if split_file[1] == page.name %}
   <div class="code">
+    <a href="{{file.path | replace: '_resources/docker/', ''}}">{{split_file[3]}}</a>
     <pre class="snippet"><code>{% include_relative {{file.path | replace: "_resources/docker/", ""}} %}</code></pre>
   </div>
 
