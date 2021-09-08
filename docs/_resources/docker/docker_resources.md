@@ -19,36 +19,12 @@ Blandit massa enim nec dui nunc. Risus in hendrerit gravida rutrum quisque. Aliq
 
   {% assign split_file=file.path | split: "/" %}
   {% if split_file[1] == page.name %}
-  <div id="{{file.path | replace: '_resources', 'resources'}}">
+  <div class="code">
+    <pre class="snippet"><code>{% include_relative {{file.path | replace: "_resources/docker/", ""}} %}</code></pre>
   </div>
 
   {% endif %}
 {% endfor %}
 
 Morbi blandit cursus risus at. Enim neque volutpat ac tincidunt vitae semper quis lectus. Netus et malesuada fames ac turpis egestas sed. Turpis massa tincidunt dui ut. Nam aliquam sem et tortor consequat id porta. Egestas sed tempus urna et pharetra pharetra massa massa. Sed augue lacus viverra vitae congue eu consequat ac. Egestas erat imperdiet sed euismod nisi porta lorem. Nulla malesuada pellentesque elit eget gravida cum. Facilisis leo vel fringilla est. Mauris augue neque gravida in fermentum et. Suscipit adipiscing bibendum est ultricies integer quis. Scelerisque purus semper eget duis at. Tellus integer feugiat scelerisque varius morbi enim. Euismod nisi porta lorem mollis aliquam ut. Est sit amet facilisis magna etiam tempor orci. Leo a diam sollicitudin tempor. Senectus et netus et malesuada fames ac turpis egestas.
-
-Ut etiam sit amet nisl. Pellentesque habitant morbi tristique senectus et netus et. Eros in cursus turpis massa. Tincidunt praesent semper feugiat nibh. Vulputate dignissim suspendisse in est ante in nibh. Adipiscing diam donec adipiscing tristique risus nec. Quisque egestas diam in arcu cursus. Pretium aenean pharetra magna ac placerat vestibulum lectus. Elit at imperdiet dui accumsan sit amet nulla. Mauris a diam maecenas sed enim ut sem viverra. Massa sed elementum tempus egestas sed sed. Lectus nulla at volutpat diam ut venenatis tellus in metus. Tristique nulla aliquet enim tortor at auctor urna. Lectus mauris ultrices eros in cursus. Semper auctor neque vitae tempus quam pellentesque. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Aliquam sem et tortor consequat id porta nibh venenatis cras. At tellus at urna condimentum mattis pellentesque id nibh tortor.
-
-<script>
-
-  (async () => {
-    let divs = document.getElementsByTagName("div");
-
-    for (let div of divs) {
-      
-      if (div.id.startsWith("resources")) {
-        const contents = await fetch("https://mmalenta.github.io/research_containers/" + div.id);
-        const text = await contents.text();
-        let pre_node = document.createElement("pre");
-        pre_node.classList.add("snippet")
-        let code_node = document.createElement("code");
-        code_node.innerText = text;
-        pre_node.appendChild(code_node);
-        div.appendChild(pre_node);
-      }
-
-    }
-  })()
-
-
-</script>
+Ut etiam sit amet nisl. Pellentesque habitant morbi tristique senectus et netus et. Eros in cursus turpis massa. Tincidunt praesent semper feugiat nibh. Vulputate dignissim suspendisse in est ante in nibh. Adipiscing diam donec adipiscing tristique risus nec. Quisque egestas diam in arcu cursus. Pretium aenean pharetra magna ac placerat vestibulum lectus. Elit at imperdiet dui accumsan sit amet nulla. Mauris a diam maecenas sed enim ut sem viverra. Massa sed elementum tempus egestas sed sed. Lectus nulla at volutpat diam ut venenatis tellus in metus. Tristique nulla aliquet enim tortor at auctor urna. Lectus mauris ultrices eros in cursus. Semper auctor neque vitae tempus quam pellentesque. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Aliquam sem et tortor consequat id porta nibh venenatis cras. At tellus at urna condimentum mattis pellentesque id 
