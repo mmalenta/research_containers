@@ -61,7 +61,7 @@ layout: default
 No single containerisation technology can solve all the problems.
 As the number of problems is growing, the number of available solutions
 is becoming greater as well.
-We are therefore asking for your contributions to this repository!
+[We are therefore asking for your contributions to this repository](contributing)!
 We are looking for lessons, hacks, tools and code you think that could
 be of use to the research community and you are willing to share.
 ## Join us!
